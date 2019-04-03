@@ -13,22 +13,30 @@
     <!-- grid cell (aka col)-->
     <div class="weather-search">
       <form class="search" [formGroup]="searchForm">
-        <mat-form-field formControlName="cityName">
+        <mat-form-field>
           <mat-label>City Name</mat-label>
-          <input matInput  placeholder="Just a placeholder">
+          <input matInput  placeholder="Insert City name 'lisboa'" formControlName="cityName">
         </mat-form-field>
-        <mat-form-field formControlName="countyCode">
+        <mat-form-field>
           <mat-label>Country Code</mat-label>
-          <input matInput placeholder="Just a placeholder">
+          <input matInput placeholder="Insert Country code 'pt'" formControlName="countryCode">
         </mat-form-field>
 
-        <button mat-button color="primary">Update Data</button>
+        <button mat-button (click)="submitSearch()">Update Data</button>
       </form>
     </div>
 
     <!-- grid cell (aka col)-->
     <section class="weather-history">
-      Graphs
+
+      <header>
+        <h2>Weather</h2>
+      </header>
+
+
+      <canvas id="temperatureChart"></canvas>
+
+
     </section>
 
   </div>
