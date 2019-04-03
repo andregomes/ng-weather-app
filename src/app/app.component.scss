@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.app-footer {
+  mat-toolbar {
+    background-color: lighten(#BECDD7, 2%);
+    height: 38px;
+    justify-content: center;}
+}

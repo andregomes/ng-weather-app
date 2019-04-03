@@ -1,6 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 @import './global/siemens-fonts';
+@import './global/mixins';
 
+$primary: #00646E;
+$light-green: #41AAAA;
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  background-color: #BECDD7;
+}
+
+.brand {
+  img {
+    width: 60px;
+    height: auto;
+  }
+}
+
+.app-header {
+  mat-toolbar {
+    background: linear-gradient(270deg, $light-green, $primary);
+    color: #ffffff;
+  }
+
+  mat-icon { margin-right: 15px; }
+  .app-title {
+    font-family: 'SiemensSans', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    margin-left: 15px;
+  }
+}
