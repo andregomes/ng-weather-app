@@ -1,0 +1,59 @@
+/* Copyright Siemens AG, 2016 */
+/* Licensed under the Siemens Inner Source License 1.1 */
+
+// Siemens Fonts
+// =============
+//
+// This component declares the typefaces 'SiemensSerif' and
+// 'SiemensSans' and makes them the default typefaces.
+//
+// There is no further action needed to make use of these fonts.
+//
+// See
+// https://brandville.siemens.com/web/guidelines/view/guidelineArea?g_id=120e68823bf1b203&a_id=14929eb5a5596803
+
+// Variables
+$font-path:         '../assets/fonts' !default;
+$siemens-font-path:  $font-path !default;
+
+// Font Face mixin
+//
+// This mixin simplifies proper @font-face definitions.
+@mixin font-face($family, $weight, $name, $italic-name: #{$name}Italic) {
+  @font-face {
+  font-family: $family;
+  font-weight: $weight;
+  font-style: normal;
+  src: url(#{$siemens-font-path}/#{$family}-#{$name}.woff) format('woff'),
+       url(#{$siemens-font-path}/#{$family}-#{$name}.eot) format('eot'),
+       url(#{$siemens-font-path}/#{$family}-#{$name}.ttf) format('truetype'),
+       url(#{$siemens-font-path}/#{$family}-#{$name}.svg) format('svg');
+  }
+
+  @font-face {
+  font-family: $family;
+  font-weight: $weight;
+  font-style: italic;
+  src: url(#{$siemens-font-path}/#{$family}-#{$italic-name}.woff) format('woff'),
+       url(#{$siemens-font-path}/#{$family}-#{$italic-name}.eot) format('eot'),
+       url(#{$siemens-font-path}/#{$family}-#{$italic-name}.ttf) format('truetype'),
+       url(#{$siemens-font-path}/#{$family}-#{$italic-name}.svg) format('svg');
+  }
+}
+
+// Font Face definitions
+//
+// SiemensSerif
+@include font-face('SiemensSerif', normal, 'Roman', 'Italic');
+@include font-face('SiemensSerif', 500, 'Semibold');
+@include font-face('SiemensSerif', bold, 'Bold');
+
+// SiemensSans
+@include font-face('SiemensSans', normal, 'Roman', 'Italic');
+@include font-face('SiemensSans', 500, 'Bold');
+@include font-face('SiemensSans', bold, 'Black');
+
+// SiemensSlab
+@include font-face('SiemensSlab', normal, 'Roman', 'Italic');
+@include font-face('SiemensSlab', 500, 'Bold');
+@include font-face('SiemensSlab', bold, 'Black');
